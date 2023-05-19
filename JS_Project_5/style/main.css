@@ -1,0 +1,51 @@
+body {
+    background-image: url(img/trading-en-ligne-1500x1001.jpg);
+}
+
+main {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    font-family: 'Poppins', sans-serif;;
+}
+
+#boxArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    width: 450px;
+    height: 450px;
+    border: 1px solid rgba(189, 189, 189, 0.404);
+    border-radius: 15px;
+    font-size: 25px;
+    background-color: rgba(189, 189, 189, 0.404);
+    backdrop-filter: blur(10px);
+}
+
+#convertHeader {
+    color: white;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.convertInput {
+    border: 1px solid white;
+    width: 150px;
+    height: 45px;
+    text-align: center;
+    line-height: 190px;
+    font-size: 0.8em;
+}
+
+.convertResult {
+    padding-top: 25px;
+    color: white;
+}
