@@ -1,0 +1,58 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boxArea {
+    width: 420px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.carre {
+    border: 1px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(4, 187, 89);
+    text-align: center;
+    line-height: 190px;
+    font-size: 2em;
+    transform: scale(1);
+    color: white;
+}
+
+.green_click {
+    animation: spin 1s;
+    transform: scale(0.9);
+    background-color: rgb(206, 70, 70);
+}
+
+.red_click {
+    animation: spin-inverted 1s;
+    transform: scale(1);
+    background-color:rgb(4, 187, 89);
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+        background-color: rgb(4, 187, 89);
+    }
+    to {
+        transform: scale(0.9) rotate(360deg);
+        background-color: rgb(206, 70, 70);
+    }
+}
+
+@keyframes spin-inverted {
+    from {
+        transform: scale(0.9) rotate(360deg);
+        background-color: rgb(206, 70, 70);
+    }
+    to {
+        transform: scale(1) rotate(0deg);
+        background-color: rgb(4, 187, 89);
+    }
+}

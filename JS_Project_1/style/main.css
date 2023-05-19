@@ -1,0 +1,15 @@
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carre {
+    border: 1px;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(4, 249, 119);
+    text-align: center;
+    line-height: 190px;
+    font-size: 3em;
+    color: white;
+}
