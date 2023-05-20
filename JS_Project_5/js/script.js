@@ -1,4 +1,4 @@
-let money = 0
+let money = 0.00
 
 const boxArea = document.querySelector("#boxArea")
 
@@ -17,14 +17,13 @@ convertResult.classList.add("convertResult")
 boxArea.appendChild(convertResult)
 
 newfield.addEventListener("input", function() {
-    if (newfield.value > 0) {
+    if (newfield.value >= 0.00) {
         convertResult.innerText = convertFranc(newfield.value) + " Francs"
-    } else if (newfield.value == NaN) {
-        convertResult.innerText = "Vous devez saisir une valeur numérique!"
     } else {
-        convertResult.innerText = ""
+        convertResult.innerText = "Vous devez saisir une valeur numérique!"
     }
 })
+
 
 function convertFranc(euro) {
     let franc = 6.56
