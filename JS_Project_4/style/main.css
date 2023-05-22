@@ -1,0 +1,22 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#boxArea {
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.carre {
+    border: 1px;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 190px;
+    font-size: 2em;
+}
+
