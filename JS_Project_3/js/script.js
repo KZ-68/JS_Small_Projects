@@ -1,5 +1,5 @@
 let player1 = { symbol: "𝖷" }
-let player2 = { symbol: "⭘" }
+let player2 = { symbol: "𐤏" }
 let player = player1.symbol
 let round = 0
 let gameFinished = false
@@ -20,16 +20,10 @@ for (let i = 1; i <= 9; i++) {
     let newbox = box.cloneNode()
     boxArea.appendChild(newbox)
 
-    newbox.addEventListener("click", (boxClicked) => {
+    newbox.addEventListener("click", () => {
         round++
-        
-        if (player == player1.symbol) {
-            boxStatus.innerHTML = "It's " + player2.symbol + " turn"
-        } else if (player == player2.symbol) {
-            boxStatus.innerHTML = "It's " + player1.symbol + " turn"
-        } else {
-            gameFinished = true
-        }
+
+        checkPlayerTurn()
 
         if (newbox.innerHTML == "" && !gameFinished) {
             newbox.innerHTML = player
@@ -38,6 +32,7 @@ for (let i = 1; i <= 9; i++) {
             alert("Ajout de symbole impossible !")
             round--
             playerSwitch()
+            checkPlayerTurn()
         }
 
         playerSwitch()
@@ -59,5 +54,15 @@ function playerSwitch() {
         player = player2.symbol
     } else {
         player = player1.symbol
+    }
+}
+
+function checkPlayerTurn() {
+    if (player == player1.symbol) {
+        boxStatus.innerHTML = "It's " + player2.symbol + " turn"
+    } else if (player == player2.symbol) {
+        boxStatus.innerHTML = "It's " + player1.symbol + " turn"
+    } else {
+        gameFinished = true
     }
 }
