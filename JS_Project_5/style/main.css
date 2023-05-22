@@ -40,9 +40,10 @@ h1 {
     border: 1px solid white;
     width: 150px;
     height: 45px;
-    text-align: center;
+    text-align: end;
     line-height: 190px;
     font-size: 0.8em;
+    padding: 0 10px;
 }
 
 .convertResult {
