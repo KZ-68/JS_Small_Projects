@@ -1,17 +1,17 @@
-
 const BOXES_LINE_COUNT = 15;
 const BOXES_TOTAL_COUNT = BOXES_LINE_COUNT * BOXES_LINE_COUNT;
 
-let kLastDisplayedBox = -1;
+let kLastDisplayedBox = -1; // Index par défaut de l'id 
 
 const bodyElement = document.querySelector("body")
 const boxArea = document.querySelector("#boxArea")
 
 const box = document.createElement("div")
-box.classList.add("carre")
+box.classList.add("box")
 
+// Ecoute de l'événement pour la pression de la touche ArrowDown
 bodyElement.addEventListener("keydown", (event) => {
-    if (event.code === "ArrowDown") {
+    if (event.code === "ArrowDown") { 
         // show the next box
         if (kLastDisplayedBox < BOXES_TOTAL_COUNT - 1) {
             kLastDisplayedBox++;
@@ -21,24 +21,31 @@ bodyElement.addEventListener("keydown", (event) => {
             newbox.style.backgroundColor = getRandomColor()
             // document.getElementById(`box${kLastDisplayedBox}`).style.backgroundColor = getRandomColor()
         }
+        
         if (kLastDisplayedBox == BOXES_TOTAL_COUNT -1) {
+            
             for(i = 0; i < BOXES_TOTAL_COUNT; i++) {
                 let idOfBox = `box${i}`
+                let turn = 0
                 document.getElementById(idOfBox).addEventListener("click", () => {
-                    document.getElementById(idOfBox).style.backgroundColor = "Black"
-                    
-                    if (this.idOfBox = document.getElementById(idOfBox).style.backgroundColor = "Black") {
-                        document.getElementById(idOfBox).addEventListener("click", () => {
-                            document.getElementById(idOfBox).style.backgroundColor = "Yellow"
-                        })
-                    }
-
+                    turn++
+                    if (turn == 1) {
+                        document.getElementById(idOfBox).style.backgroundColor = "Black"
+                    } else if (turn == 2) {
+                        document.getElementById(idOfBox).style.backgroundColor = "Yellow"
+                    } else if (turn == 3) {
+                        document.getElementById(idOfBox).style.backgroundColor = "White"
+                        turn = 0
+                    } 
                 })
             }
         }
+
+        
       }
 }, true)
 
+// Ecoute de l'événement pour la pression de la touche ArrowUp
 bodyElement.addEventListener("keydown", (event) => {
     if (event.code === "ArrowUp") {
         // hide the next box
